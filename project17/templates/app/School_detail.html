@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>School_detail</h1>
+        <h1>The name of the school is : {{schoolobj.sname}}</h1>
+        <h1>The Contact no of school is {{schoolobj.spno}}</h1>
+        <h1>The princy of school is {{schoolobj.sprincy}}</h1>
+        <h1>The students are</h1>
+        <table>
+            <tr>
+                <th>Student name</th>
+                <th>Student Phone number</th>
+            </tr>
+            {% for student in schoolobj.students.all %}
+            <tr>
+                <td>{{student.stdname}}</td>
+                <td>{{student.stdpno}}</td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+
+            <a href="update{{schoolobj.pk}}">Update the school</a>
+            <a href="delete{{schoolobj.pk}}">Delete</a>
+    </center>
+</body>
+
+</html>
